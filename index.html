@@ -39,7 +39,7 @@
             currentCard++;
             
             images.style.transition = '0.5s';
-            images.style.transform = `translate(-${currentCard * 500}px`;
+            images.style.transform = `translate(-${currentCard * 16.66666666666}%`;
 
         } else {
             return;
@@ -52,7 +52,7 @@
             currentCard--;
 
             images.style.transition = '0.5s';
-            images.style.transform = `translate(-${currentCard * 500}px`;
+            images.style.transform = `translate(-${currentCard * 16.666666666666}%`;
 
         } else {
             return;
@@ -68,17 +68,18 @@
         width: fit-content;
     }
     .image-card{
-        width: 500px;
-        height: 500px;
+        width: 100%;
+        height: auto;
         /* background-color: green; */
         /* border: 2px solid black; */
         box-sizing: border-box;
         color: white;
-        background-image: cover;
+        background-image: contain;
+        object-fit: contain;
     }
     .view-port{
         background-color: rgb(255, 255, 255);
-        width: 97vw;
+        width: 100vw;
         height: 500px;
         overflow: hidden;
         position: absolute;
