@@ -18,7 +18,7 @@
             <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
             <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
             <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
-            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div> 
         </div>  
     </div>
 </body>
@@ -39,7 +39,7 @@
             currentCard++;
             
             images.style.transition = '0.5s';
-            images.style.transform = `translate(-${currentCard * 16.66666666666}%`;
+            images.style.transform = `translate(-${currentCard * 16.666666666666667}%`;
 
         } else {
             return;
@@ -52,7 +52,7 @@
             currentCard--;
 
             images.style.transition = '0.5s';
-            images.style.transform = `translate(-${currentCard * 16.666666666666}%`;
+            images.style.transform = `translate(-${currentCard * 16.666666666666667}%`;
 
         } else {
             return;
@@ -68,7 +68,7 @@
         width: fit-content;
     }
     .image-card{
-        width: 100%;
+        width: 33%;
         height: auto;
         /* background-color: green; */
         /* border: 2px solid black; */
@@ -76,10 +76,11 @@
         color: white;
         background-image: contain;
         object-fit: contain;
+       
     }
     .view-port{
         background-color: rgb(255, 255, 255);
-        width: 100vw;
+        width: 99vw;
         height: 500px;
         overflow: hidden;
         position: absolute;
