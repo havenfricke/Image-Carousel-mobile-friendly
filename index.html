@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="view-port">
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <div class="image-container">
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+            <div class="image-card"><img src="https://thiscatdoesnotexist.com" /></div>
+        </div>  
+    </div>
+</body>
+
+<script>
+    //To change the size of the gallery:
+    //Update all pixel sizes in HTML, JS, CSS
+    //Width/Height should all be the same sizes
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    const images = document.querySelector('.image-container');
+
+    let currentCard = 0;
+
+    next.addEventListener('click', () =>{
+        if (currentCard < images.children.length - 1){
+
+            currentCard++;
+            
+            images.style.transition = '0.5s';
+            images.style.transform = `translate(-${currentCard * 500}px`;
+
+        } else {
+            return;
+        }
+    });
+
+    prev.addEventListener('click', () =>{
+        if (currentCard > 0){
+
+            currentCard--;
+
+            images.style.transition = '0.5s';
+            images.style.transform = `translate(-${currentCard * 500}px`;
+
+        } else {
+            return;
+        }
+    });
+    
+</script>
+
+<style>
+    .image-container{
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+    }
+    .image-card{
+        width: 500px;
+        height: 500px;
+        /* background-color: green; */
+        /* border: 2px solid black; */
+        box-sizing: border-box;
+        color: white;
+        background-image: cover;
+    }
+    .view-port{
+        background-color: rgb(255, 255, 255);
+        width: 97vw;
+        height: 500px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
+    }
+    .buttons{
+        justify-content: center;
+        display: flex;
+        padding-bottom: 2vh;
+    }
+</style>
+</html>
